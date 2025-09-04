@@ -1,0 +1,52 @@
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo > img {
+  width: 150px;
+}
+
+.header > ul {
+  list-style: none;
+  display: flex;
+}
+
+.header > ul > li {
+  padding: 30px;
+}
+
+button :hover {
+  cursor: pointer;
+  color: red;
+}
+
+.header > ul > li > button {
+  color: #d41414;
+  background-color: #000;
+  font-size: 30px;
+}
+
+.RestaurantContainer {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.CardContainer {
+  color: #e19b8b;
+  width: 150px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.CardContainer:hover {
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.CardContainer > img {
+  width: 100%;
+  height: 100px;
+}
+/*# sourceMappingURL=Namasthe React.9e4c6fd2.css.map */

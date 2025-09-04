@@ -1,0 +1,33 @@
+{
+  "name": "namasthe-react",
+  "version": "1.0.0",
+  "description": "This is about react js from basic depth to high level",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavya970/Namasthe-React.git"
+  },
+  "keywords": [
+    "Namasthe-React",
+    "Bhavya",
+    "Sree",
+    "React"
+  ],
+  "author": "Bhavya Sree",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhavya970/Namasthe-React/issues"
+  },
+  "homepage": "https://github.com/bhavya970/Namasthe-React#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}

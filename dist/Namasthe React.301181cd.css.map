@@ -1,0 +1,1 @@
+{"mappings":"ACAA,gBAGA","sources":["Namasthe React.301181cd.css","index.css"],"sourcesContent":["#root {\n  color: red;\n}\n\n#xyz {\n  color: #00f;\n}\n/*# sourceMappingURL=Namasthe React.301181cd.css.map */\n","#root{\r\n    color:red;\r\n}\r\n#xyz{\r\n    color:blue;\r\n}"],"names":[],"version":3,"file":"Namasthe React.301181cd.css.map"}

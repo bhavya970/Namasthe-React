@@ -1,6 +1,45 @@
-#root{
+.header{
+    display : flex;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+.logo > img {
+    width: 150px;
+}   
+.header > ul{
+    display : flex;
+    list-style: none;
+}
+.header > ul > li {
+    padding:30px 30px;
+}
+button :hover{
+    cursor:pointer;
     color:red;
 }
-#xyz{
-    color:blue;
+.header > ul > li>button{
+    font-size: 30px;
+    color:#D41414;
+    background-color: black;
+}
+/* .container{
+    border:1px solid black; 
+} */
+.RestaurantContainer{
+    display:flex;
+    flex-wrap: wrap;
+}
+.CardContainer{
+     color:#E19B8B;
+     width: 150px;
+     padding:10px;
+     margin: 5px;
+}
+.CardContainer:hover{
+    cursor: pointer;
+    border:2px solid black;
+}
+.CardContainer > img{
+    height:100px;
+    width:100%;
 }
