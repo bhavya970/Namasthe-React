@@ -12,6 +12,7 @@
 }
 .header > ul > li {
     padding:30px 30px;
+    cursor:pointer;      
 }
 button :hover{
     cursor:pointer;
@@ -30,10 +31,11 @@ button :hover{
     flex-wrap: wrap;
 }
 .CardContainer{
-     color:#E19B8B;
-     width: 150px;
-     padding:10px;
-     margin: 5px;
+    color:#E19B8B;
+    height: 380px;
+    width: 150px;
+    margin: 5px;
+    padding: 10px;
 }
 .CardContainer:hover{
     cursor: pointer;
@@ -42,4 +44,20 @@ button :hover{
 .CardContainer > img{
     height:100px;
     width:100%;
+}
+.filter-btn{
+    margin:10px;
+    cursor: pointer;
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    background-color: #310A69;
+    height: 380px;
+    width: 150px;
+    margin: 5px;
+    padding: 10px;
 }

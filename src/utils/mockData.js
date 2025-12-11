@@ -1,8 +1,8 @@
-const resList = [
+let resList = [
   {
     resName: "Meghana Foods",
     cuisines: ["Biryani", "South Indian", "Andhra"],
-    rating: 4.3,
+    rating: 3.3,
     timeTaken: "30 mins",
     price: "₹500 for two",
     imgId: "6ef07bda-b707-48ea-9b14-2594071593d1_Biryani.png"
@@ -18,7 +18,7 @@ const resList = [
   {
     resName: "McDonald's",
     cuisines: ["Burger", "Fries", "Beverages"],
-    rating: 4.0,
+    rating: 2.2,
     timeTaken: "20 mins",
     price: "₹350 for two",
     imgId: "8f508de7-e0ac-4ba8-b54d-def9db98959e_burger.png"
@@ -34,7 +34,7 @@ const resList = [
   {
     resName: "Subway",
     cuisines: ["Healthy", "Sandwich", "Fast Food"],
-    rating: 4.2,
+    rating: 3.2,
     timeTaken: "22 mins",
     price: "₹300 for two",
     imgId: "8f508de7-e0ac-4ba8-b54d-def9db98959e_Pure%20Veg.png"
@@ -82,7 +82,7 @@ const resList = [
   {
     resName: "Haldiram's",
     cuisines: ["North Indian", "Snacks", "Sweets"],
-    rating: 4.1,
+    rating: 3.1,
     timeTaken: "20 mins",
     price: "₹300 for two",
     imgId: "6ef07bda-b707-48ea-9b14-2594071593d1_Khichdi.png"

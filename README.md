@@ -163,6 +163,26 @@ root.render(<HeadingComponent/>);
     What If "api" provides "malicious code" ?
        Not possible , because JSX(parcel) takes care of these injection Attacks. JSX will escape , sanitize the code.
        Preventing Cross-Site Scripting.
+
+  # Instead Of This , use Higher Order Function :-
+            <RestaurantCard {...resList[0]} />
+            <RestaurantCard {...resList[1]}/>
+            <RestaurantCard {...resList[2]}/>
+            <RestaurantCard {...resList[3]}/>
+            <RestaurantCard {...resList[4]}/>
+            <RestaurantCard {...resList[5]}/>
+            <RestaurantCard {...resList[6]}/>
+            <RestaurantCard {...resList[7]}/>
+            <RestaurantCard {...resList[8]}/>
+            <RestaurantCard {...resList[9]}/>
+            <RestaurantCard {...resList[10]}/>
+            <RestaurantCard {...resList[11]}/>
+            <RestaurantCard {...resList[12]}/>
+            <RestaurantCard {...resList[13]}/>
+            <RestaurantCard {...resList[14]}/>
+            <RestaurantCard {...resList[15]}/>
+            <RestaurantCard {...resList[16]}/> 
+            <RestaurantCard {...resList[17]}/> 
     
 # Higher Order Functions :
     Functions inside functions ,....inside functions are called HOF
@@ -211,11 +231,78 @@ root.render(<HeadingComponent/>);
         2. Named Export : export const <component function>
     # Import :-
         1. Default Import :  import "compo Name" from "Path"
-        2. Nmaed Import : import "{compo name}" from "Path"
+        2. Named Import : import "{compo name}" from "Path"
 # Let's get Hooked :
-    
-    
-    
+    Before getting to know hooks concept , lets try to make our website dynamic.
+    For that we can add "FILTER" Button.
+    # Filter Functionality:
+        It will filter the restauro cards which have avg.rating >= 4
+        How to filter:-
+            resList = resList.filter((x) =>( x.avgRate >= 4))
+          i.e <button className = "filter-btn" 
+                Onclick(() => {
+                  resList = resList.filter((res) =>( res.avgRate >= 4))
+                })>
+        But The UI gets not changed i.e mapping of Data Layer and UI Layer not occurring.
+        There are 2 types of Layers :- Data Layer , UI Layer. -> From Data the UI is builted.
+        Ex: From Mock Data the UI is building. Change in mockData proportional to UI
+
+        But when we are filtering not get changed.
+            import RestaurantCard from "./RestaurantCard";
+            import resList from "../utils/mockData";
+              const Body = () => {
+                return (
+                <div className="container">
+                  <div className="search">
+                    <h1>Search</h1>
+                  </div>
+                  <div className = "filter">
+                    <button className = "filter-btn"
+                      onClick={()=>{
+                        const filtered = resList.filter((res) => (res.rating >= 4))
+                          console.log(filtered);
+                    }}>Top-Rating Restaurants</button>
+                  </div>
+              <div className="RestaurantContainer">
+                 {resList.map((res , index) => (
+                <RestaurantCard key={index} {...res} />
+                ))}
+                 </div>
+              </div>
+            );
+          };
+          export default Body;
+      So to sync data layer and ui layer  , React comes with Hooks.
+       -- useState (80%) [State Variable]
+       -- useEffect (20%)
+
+  # useState:
+    Import as Named Component
+      import { useState } from "react"
+        const [listOfRestaurants , setListOfRestaurants] = useState(resList) //returns an array with duplicate data
+        onClick={()=>{
+            const filtered = listOfRestaurants.filter((res) => (res.rating >= 4))
+            console.log(filtered);
+            setListOfRestaurants(filtered);
+         }}>Top-Rating Restaurants</button>
+         <div className="RestaurantContainer">
+            {listOfRestaurants.map((res , index) => (
+            <RestaurantCard key={index} {...res} />
+      ))}
+      </div>
+
+      //setListOfRestaurabts is a function
+      -- what ever we want to change just pass into function , On function call it triggers the "DIFF Algorithm"
+
+# Reconciliation :
+   
+
+
+
+
+             
+
+          
          
 
       
