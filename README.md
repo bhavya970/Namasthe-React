@@ -59,7 +59,7 @@ root.render(parent);
 --> Development : It done while building an app [npx parcel index.html]
     -->Features: Fast refresh/hot reload , Detailed error messages
 --> Production : It is final , deployed version of our app[npx parcel build index.html] which takes more time
-    -->Features: Optimization(tree-shaking,compression) , Minification , React Warnings & logs are removed
+    -->Features: Optimization(tree-shaking,compression), Minification , React Warnings & logs are removed
 
 # JSX : stands for JavaScript XML extension of Javascript which allows you to write HTML-like syntax code in javascript files
     Because , everytime writing the React.createElement("h1" , {} , "I'm h1"); which is ugly.
@@ -71,6 +71,10 @@ root.render(parent);
 
 
 # In Parcel transpiles that JSX code into Javascript code
+    <html>
+    <head>--------</head>
+    <body>
+        <div id = "root">
 # Attributes : should be in a camelCase
     Ex : className , tabIndex , etc
 # Single Line & Multiple Line Thing 
@@ -194,7 +198,7 @@ root.render(<HeadingComponent/>);
        // Namasthe Food
        1. First Build the UI Plan 
        2. By seeing plan build the react code
-       3 .For Every code of React  , we can write in HTML ,CSS ,JS , but with React with less code we can build large scale application
+       3. For Every code of React  , we can write in HTML ,CSS ,JS , but with React with less code we can build large scale application
 
     1.Plan :
         Header 
@@ -277,6 +281,10 @@ root.render(<HeadingComponent/>);
        -- useEffect (20%)
 
   # useState:
+            // console.log("Body Rendered");
+            // const arr = useState(resList);
+            // const listOfRestaurants = arr[0];
+            // const setListOfRestaurants = arr[1];
     Import as Named Component
       import { useState } from "react"
         const [listOfRestaurants , setListOfRestaurants] = useState(resList) //returns an array with duplicate data
@@ -295,6 +303,39 @@ root.render(<HeadingComponent/>);
       -- what ever we want to change just pass into function , On function call it triggers the "DIFF Algorithm"
 
 # Reconciliation :
+    When ever a state variable changes react "Re-render" the component.
+    # How it is Working:
+        React uses reconcilation algorithm which also known as React Fiber.
+        When ever you filter -> re-render happens means,
+           7cards -> 3cards
+           # Virtual DOM
+              i.e it creates a virtual DOM 
+              virtual dom is not a actual dom
+              virtual dom is a representation of actual dom
+              it is a normal kind of java script object
+          # Diff Algorithm
+            FINDS OUT DIFFERENCE B/W UPDATED V-DOM AND PREVIOUS V-DOM
+            THEN UPDATES ACTUAL DOM
+  # React Fiber Architecture
+    read o n acd lite
+  # Monolith Architecture
+       API UI
+       AUTH DB SMS     -- Everything inside on same repository 
+       -- Everyone work on same repository
+  # Microservices Architecture
+      -- Different surface for different jobs
+      BE UI AUTH
+      DM SMS Email
+       
+      all these services combined together to form big app
+      Different Techstack 
+      own specific ports
+      This is known as "Seperation of Concerns" i.e "Single Responsibility Principle"
+
+      Follows each service has one job
+  # How Do Services Interact Each Other, How all these are Deployed ?
+     At the end all the ports as mapped to Domain Name
+        
    
 
 

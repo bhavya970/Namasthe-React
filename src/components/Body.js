@@ -5,15 +5,9 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants , setFilteredRestaurants] = useState([]);
-  // console.log("Body Rendered");
-  // const arr = useState(resList);
-  // const listOfRestaurants = arr[0];
-  // const setListOfRestaurants = arr[1];
   const fetchData = async () => {
     const data = await fetch("https://corsproxy.io/https://pastebin.com/raw/0QcdEDBL");
     const json = await data.json();
-    // console.log(json.data.cards[5].card.card.gridElements.infoWithStyle.restaurants);    
-    // setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      const restaurantsCard = json?.data?.cards?.find(
       (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
