@@ -62,3 +62,10 @@ button :hover{
     margin: 5px;
     padding: 10px;
 }
+
+.user-card{
+    border: 2px solid black;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+}
