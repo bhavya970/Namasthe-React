@@ -1,23 +1,26 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants , setFilteredRestaurants] = useState([]);
   const fetchData = async () => {
-    const data = await fetch("https://corsproxy.io/https://pastebin.com/raw/0QcdEDBL");
+    const data = await fetch("https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants");
     const json = await data.json();
-     const restaurantsCard = json?.data?.cards?.find(
-      (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    //  const restaurantsCard = json?.data?.cards?.find(
+    //   (c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
     
-    const restaurants =
-      restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+    // const restaurants =
+    //   restaurantsCard?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
-    console.log("Fetched restaurants:", restaurants);
-    setListOfRestaurants(restaurants);
-    setFilteredRestaurants(restaurants);
+    // console.log("Fetched restaurants:", restaurants);
+    // setListOfRestaurants(restaurants);
+    // setFilteredRestaurants(restaurants);
+    setListOfRestaurants(json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants); 
+    setFilteredRestaurants(json?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   //Shimmer.js UI
   useEffect(() => {
@@ -50,10 +53,16 @@ if(listOfRestaurants.length === 0) {
          }}>Top-Rating Restaurants</button>
       </div>
       <div className="RestaurantContainer">
-            {filteredRestaurants.map((res , index) => (
-            <RestaurantCard key={index} {...res} />
-      ))}
-      </div>
+  {filteredRestaurants.map((res) => (
+    <Link
+      key={res.info.id}
+      to={`/restaurants/${res.info.id}`}
+    >
+      <RestaurantCard info={res.info} />
+    </Link>
+  ))}
+</div>
+
     </div>
   );
 };

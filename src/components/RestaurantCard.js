@@ -1,15 +1,14 @@
 import {CDN_URL} from "../utils/constants";
-import resList from "../utils/mockData";
-const RestaurantCard = (props) => {
+const RestaurantCard = ({ info }) => {
   return (
-      <div className="CardContainer" style={{background:"#310A69"}}>
-          <img src = {props.info.cloudinaryImageId}/>
-          <h3>{props?.info?.name}</h3>
-          <h3>{props?.info?.cuisines.join(", ")}</h3>
-          <h3>{props?.info?.avgRating}</h3>
-          <h3>{props?.info?.sla.deliveryTime}</h3>
-          <h3>{props?.info?.costForTwo}</h3>
-      </div>
+    <div className="CardContainer" style={{ background: "#310A69" }}>
+      <img src={CDN_URL + info.cloudinaryImageId} />
+      <h3>{info.name}</h3>
+      <h3>{info.cuisines?.join(", ")}</h3>
+      <h3>{info.avgRating}</h3>
+      <h3>{info.sla?.deliveryTime} mins</h3>
+      <h3>{info.costForTwo}</h3>
+    </div>
   );
 };
 
