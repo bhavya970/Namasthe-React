@@ -335,6 +335,13 @@ root.render(<HeadingComponent/>);
       Follows each service has one job
   # How Do Services Interact Each Other, How all these are Deployed ?
      At the end all the ports as mapped to Domain Name
+
+  //Chunking
+  //Code Spliting
+  //Lazy Loading
+  //On Demand Loading
+  //Dynamic Bundling
+  //Dynamic Import
         
    
 
