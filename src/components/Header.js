@@ -5,8 +5,8 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
     const [btnName, setBtnName] = useState("login");
     const onlineStatus = useOnlineStatus();
-    return (
-        <div className="header">
+    return (  
+        <div className="flex justify-between bg-pink-100 shadow-lg sm:bg-yellow-100 md:bg-green-100 lg:bg-blue-100">
             <div className="logo">
                 <img src= {LOGO_URL} alt = "logo_url"/>
             </div>
