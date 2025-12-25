@@ -1,14 +1,18 @@
 import ItemList from "./ItemList";
-
+import { useState } from "react";
 const RestaurantCategory = ({data}) => {
+    const [showItems ,setShowItems] = useState(false);
+    const handleClick = () => {
+        setShowItems(!showItems);
+    }
     return (
     <div>
-        <div className="w-8/12 bg-gray-200 p-2 mx-auto my-2">
-        <div className="flex justify-between cursor-pointer">
+        <div className="w-8/12 bg-gray-200 p-2 mx-auto my-2 shadow-lg">
+        <div className="flex justify-between cursor-pointer" onClick = {handleClick}>
             <span className="font-bold text-xl">{data.title}({data.itemCards?.length})</span>
             <span>⬇️</span>
         </div>  
-            <span><ItemList items={data.itemCards} /></span>
+            {showItems && <ItemList items={data.itemCards} />}
         </div>
         {/* items -accordion*/}
     </div>
