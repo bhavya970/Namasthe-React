@@ -15,6 +15,7 @@ const RestaurantMenu = () => {
   //   console.log(json);
   //   setResInfo(json.data);
   // };
+  const [showIndex, setShowIndex] = useState(null);
   const resInfo = useRestaurantMenu(resid);
   if (resInfo === null) {
     return <Shimmer />;
@@ -33,9 +34,12 @@ const RestaurantMenu = () => {
     <div className="p-4">
       <h1 className="p-2 text-center text-2xl font-bold">{name}</h1>
       <h2 className="py-2 text-center text-red-600 font-bold">{cuisines?.join(", ")} - Rs.{costForTwo}</h2> 
-      {categories.map((category) => (
+      {categories.map((category , index) => (
         //categories
-        <RestaurantCategory key={category.card.card.title} data={category.card.card} />
+        <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card}
+        showItems = {index === showIndex ? true : false}
+        setShowIndex ={() => setShowIndex(index)}
+         />
       ))}
     </div>
   );
