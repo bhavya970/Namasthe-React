@@ -7,18 +7,32 @@ import About from "./src/components/About";
 import Contact from "./src/components/Contact";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
-import {lazy , Suspense} from "react";
+import {lazy , Suspense , useState,useEffect} from "react";
+import UserContext from "./src/utils/UserContext";
 
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
 const AppLayout = () => {
    
+    //authorization
+
+    const [showName , setShowName] = useState(true);
+
+    useEffect(() => {
+        const data = {
+            name : "Vasudhevaya",
+        }
+        setShowName(data.name);
+    },[])
 
     return (
+        <UserContext.Provider value={{loggedInUser: showName , setShowName}}>
         <div className="container">
             <Header/>
             <Outlet/>
         </div>
+        </UserContext.Provider>
+        
     );
 };
 

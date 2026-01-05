@@ -1,14 +1,15 @@
 import RestaurantCard , {withPromotedLabel} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import userContext from "../utils/UserContext";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants , setFilteredRestaurants] = useState([]);
-  console.log(listOfRestaurants);
+  const {loggedInUser,setShowName} = useContext(userContext); 
+  // console.log(listOfRestaurants);
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
   const fetchData = async () => {
     const data = await fetch("https://corsproxy.io/https://namastedev.com/api/v1/listRestaurants");
@@ -59,9 +60,12 @@ if(listOfRestaurants.length === 0) {
             console.log(filtered);
             setFilteredRestaurants(filtered);
          }}>Top-Rating Restaurants</button>
+          <label>UserName:</label>&nbsp;
+          <input className="border-solid border-black rounded-lg  p-2" type="text" value={loggedInUser} onChange={(e) => setShowName(e.target.value)}></input>
       </div>
       </div>
       <div className="flex flex-wrap">
+
   {filteredRestaurants.map((res) => (
     <Link
       key={res.info.id}
@@ -71,7 +75,9 @@ if(listOfRestaurants.length === 0) {
       {res.info.promoted ? <RestaurantCardPromoted info={res.info} /> : <RestaurantCard info={res.info} />}
     </Link>
   ))}
+
 </div>
+    
 
     </div>
   );
